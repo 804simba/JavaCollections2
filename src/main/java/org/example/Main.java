@@ -9,10 +9,16 @@ public class Main {
         int[] array = {1, 4, 2, 2, 7, 10, 10, 5, 12, 10, 10};
         String word = "sTress";
 //        String res =
-        firstSingleChar(word);
+//        firstSingleChar(word);
 //        System.out.println(res);
-
-
+        // converts an array into an arrayList
+        var arrayList = Arrays.asList(array);
+        System.out.println(arrayList);
+        // Java 9 list.of method
+        List<String> names = List.of("Tim", "tony", "Kanye west");
+        String[] newNames = names.toArray(new String[names.size()]);
+        System.out.println("New array: " + Arrays.toString(newNames));
+        
     }
 
     public static void firstSingleChar(String word) {

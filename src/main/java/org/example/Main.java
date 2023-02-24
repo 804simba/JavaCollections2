@@ -14,6 +14,8 @@ public class Main {
         // converts an array into an arrayList
         var arrayList = Arrays.asList(array);
         System.out.println(arrayList);
+        arrayList.add(new int[] {2, 3});
+        System.out.println("Modified arrayList: " + arrayList);
         // Java 9 list.of method
         List<String> names = List.of("Tim", "tony", "Kanye west");
         String[] newNames = names.toArray(new String[names.size()]);

@@ -1,23 +1,23 @@
 package org.example.collections;
 
-public class MyLinkedList {
-    Node head; // head of the list
+public class MyLinkedList<T> {
+    Node<T> head; // head of the list
 
     // LinkedList Node is made static so that main() can access it.
-    static class Node {
-        int data;
-        Node next;
+    static class Node<T> {
+        T data;
+        Node<T> next;
 
-        public Node(int data) {
+        public Node(T data) {
             this.data = data;
             next = null;
         }
     }
 
     // method to add a new Node
-    public static MyLinkedList insert(MyLinkedList list, int data) {
+    public static <T> MyLinkedList<T> insert(MyLinkedList<T> list, T data) {
         // Create a new Node with given data
-        Node new_node = new Node(data);
+        Node<T> new_node = new Node(data);
 
         // if the LinkedList is empty,
         // then make the new node as the head.
@@ -26,7 +26,7 @@ public class MyLinkedList {
         } else {
             // Else transverse till the last Node
             // and add the new Node there.
-            Node last = list.head;
+            Node<T> last = list.head;
             while (last.next != null) {
                 last = last.next;
             }
@@ -37,8 +37,8 @@ public class MyLinkedList {
         return list;
     }
 
-    public static void printList(MyLinkedList list) {
-        Node currentNode = list.head;
+    public static <T> void printList(MyLinkedList<T> list) {
+        Node<T> currentNode = list.head;
 
         System.out.print("My LinkedList: ");
         // transverse through the list
